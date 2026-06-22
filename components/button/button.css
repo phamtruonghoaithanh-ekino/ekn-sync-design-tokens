@@ -1,0 +1,30 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--component-button-primary-padding-y) var(--component-button-primary-padding-x);
+  font-weight: var(--component-button-primary-font-weight);
+  border: var(--button-border-width) var(--button-border-style) var(--button-border-color);
+  cursor: pointer;
+}
+
+.button--primary {
+  color: var(--component-button-primary-color);
+  background: var(--component-button-primary-background-color);
+  border-radius: var(--component-button-primary-border-radius);
+}
+
+.button--secondary {
+  padding: var(--component-button-secondary-padding-y) var(--component-button-secondary-padding-x);
+  color: var(--component-button-secondary-color);
+  background: var(--component-button-secondary-background-color);
+  border-color: var(--component-button-secondary-border-color);
+  border-width: var(--component-button-secondary-border-width);
+  border-style: var(--component-button-secondary-border-style);
+  border-radius: var(--component-button-secondary-border-radius);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

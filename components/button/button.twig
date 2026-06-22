@@ -1,0 +1,13 @@
+{% set variant = variant|default('primary') %}
+{% set type = type|default('button') %}
+{% set button_attributes = attributes|default(create_attribute()) %}
+{% set button_attributes = button_attributes.addClass([
+  'button',
+  'button--' ~ variant,
+]) %}
+
+{% if disabled %}
+  {% set button_attributes = button_attributes.setAttribute('disabled', 'disabled') %}
+{% endif %}
+
+<button{{ button_attributes }} type="{{ type }}">{{ label }}</button>

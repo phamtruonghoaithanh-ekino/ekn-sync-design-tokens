@@ -1,0 +1,32 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/modules/sdc/src/metadata.schema.json'
+name: Button
+description: 'A token-driven native button.'
+status: stable
+group: Actions
+props:
+  type: object
+  required:
+    - label
+  properties:
+    label:
+      type: string
+      title: Label
+    variant:
+      type: string
+      title: Variant
+      enum:
+        - primary
+        - secondary
+      default: primary
+    type:
+      type: string
+      title: Button type
+      enum:
+        - button
+        - submit
+        - reset
+      default: button
+    disabled:
+      type: boolean
+      title: Disabled
+      default: false

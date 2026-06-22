@@ -1,0 +1,19 @@
+global:
+  css:
+    base:
+      css/base.css: {}
+
+tokens-react-light:
+  css:
+    theme:
+      'css/tokens/vars-React Light.css': {}
+
+tokens-react-dark:
+  css:
+    theme:
+      'css/tokens/vars-React Dark.css': {}
+
+tokens-react-brand-a:
+  css:
+    theme:
+      'css/tokens/vars-React Brand A.css': {}

@@ -1,0 +1,17 @@
+name: EKN Tokens
+type: theme
+description: 'A token-driven Drupal theme using generated Style Dictionary themes and Single Directory Components.'
+base theme: false
+core_version_requirement: ^10.3 || ^11
+
+libraries:
+  - ekn_tokens/global
+
+regions:
+  header: Header
+  primary_menu: Primary menu
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar: Sidebar
+  footer: Footer

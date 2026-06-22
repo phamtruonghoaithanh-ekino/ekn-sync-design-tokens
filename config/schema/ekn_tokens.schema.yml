@@ -1,0 +1,7 @@
+ekn_tokens.settings:
+  type: theme_settings
+  label: 'EKN Tokens theme settings'
+  mapping:
+    active_token_theme:
+      type: string
+      label: 'Active design-token theme'

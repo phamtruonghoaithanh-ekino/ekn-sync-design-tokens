@@ -1,0 +1,15 @@
+{% set card_attributes = attributes|default(create_attribute()) %}
+{% set card_attributes = card_attributes.addClass('card') %}
+{% set heading_level = heading_level|default('h2') %}
+
+<article{{ card_attributes }}>
+  {% if title %}
+    <{{ heading_level }} class="card__title">{{ title }}</{{ heading_level }}>
+  {% endif %}
+
+  <div class="card__content">{% block content %}{% endblock %}</div>
+
+  {% if actions %}
+    <div class="card__actions">{% block actions %}{% endblock %}</div>
+  {% endif %}
+</article>

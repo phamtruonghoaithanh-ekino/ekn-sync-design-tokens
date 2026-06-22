@@ -1,0 +1,17 @@
+.card {
+  padding: var(--component-card-default-padding);
+  color: var(--component-card-default-color);
+  background: var(--component-card-default-background-color);
+  border-radius: var(--component-card-default-border-radius);
+}
+
+.card__title {
+  margin-block: 0 var(--spacing-md);
+}
+
+.card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-block-start: var(--spacing-lg);
+}

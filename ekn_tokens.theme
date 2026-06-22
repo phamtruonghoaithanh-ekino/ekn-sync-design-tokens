@@ -1,0 +1,27 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Theme hooks and preprocess functions for the EKN Tokens theme.
+ */
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function ekn_tokens_preprocess_html(array &$variables): void {
+  $themes = [
+    'react_light' => 'tokens-react-light',
+    'react_dark' => 'tokens-react-dark',
+    'react_brand_a' => 'tokens-react-brand-a',
+  ];
+
+  $active_theme = theme_get_setting('active_token_theme') ?: 'react_light';
+  if (!isset($themes[$active_theme])) {
+    $active_theme = 'react_light';
+  }
+
+  $variables['#attached']['library'][] = 'ekn_tokens/' . $themes[$active_theme];
+  $variables['attributes']['data-theme'] = str_replace('_', '-', $active_theme);
+}

@@ -1,0 +1,26 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.3.x/core/modules/sdc/src/metadata.schema.json'
+name: Card
+description: 'A token-driven content container.'
+status: stable
+group: Content
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: Title
+    heading_level:
+      type: string
+      title: Heading level
+      enum:
+        - h2
+        - h3
+        - h4
+      default: h2
+slots:
+  content:
+    title: Content
+    description: 'The main card content.'
+  actions:
+    title: Actions
+    description: 'Optional links or buttons.'
