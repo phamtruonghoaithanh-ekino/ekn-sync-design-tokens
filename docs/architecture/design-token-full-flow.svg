@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1320" viewBox="0 0 1800 1320">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 34px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 16px Arial, sans-serif; fill: #475569; }
+      .group-title { font: 700 18px Arial, sans-serif; fill: #0f172a; }
+      .node { fill: #ffffff; stroke: #64748b; stroke-width: 2; rx: 10; }
+      .decision { fill: #fff7ed; stroke: #f97316; stroke-width: 2; }
+      .terminal { fill: #ecfdf5; stroke: #10b981; stroke-width: 2; rx: 10; }
+      .error { fill: #fef2f2; stroke: #ef4444; stroke-width: 2; rx: 10; }
+      .artifact { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 10; }
+      .text { font: 600 15px Arial, sans-serif; fill: #1e293b; }
+      .small { font: 500 13px Arial, sans-serif; fill: #475569; }
+      .line { stroke: #334155; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .thin { stroke: #64748b; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .label { font: 700 12px Arial, sans-serif; fill: #334155; }
+      .startup { fill: #f8fafc; stroke: #94a3b8; stroke-width: 2; rx: 18; }
+      .plugin { fill: #f0fdf4; stroke: #86efac; stroke-width: 2; rx: 18; }
+      .preview { fill: #fefce8; stroke: #fde047; stroke-width: 2; rx: 18; }
+      .sync { fill: #f5f3ff; stroke: #c4b5fd; stroke-width: 2; rx: 18; }
+      .provider { fill: #eef2ff; stroke: #a5b4fc; stroke-width: 2; rx: 18; }
+      .pipeline { fill: #f0f9ff; stroke: #7dd3fc; stroke-width: 2; rx: 18; }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1320" fill="#ffffff"/>
+  <text x="60" y="62" class="title">Design Token Automation - Full Flow</text>
+  <text x="60" y="92" class="subtitle">Figma is the source of truth. Add/Edit Token validation prevents invalid tokens from entering plugin state.</text>
+
+  <rect x="50" y="130" width="400" height="480" class="startup"/>
+  <text x="75" y="165" class="group-title">Plugin Startup Sync</text>
+  <rect x="110" y="195" width="280" height="50" class="node"/>
+  <text x="250" y="225" text-anchor="middle" class="text">Open Figma Plugin</text>
+  <rect x="110" y="275" width="280" height="50" class="node"/>
+  <text x="250" y="305" text-anchor="middle" class="text">Load Provider Configuration</text>
+  <polygon points="250,355 365,415 250,475 135,415" class="decision"/>
+  <text x="250" y="412" text-anchor="middle" class="text">Provider</text>
+  <text x="250" y="431" text-anchor="middle" class="text">Configured?</text>
+  <rect x="85" y="520" width="330" height="56" class="node"/>
+  <text x="250" y="544" text-anchor="middle" class="text">Fetch Latest tokens.json</text>
+  <text x="250" y="563" text-anchor="middle" class="small">Check connection, repo, branch, file</text>
+
+  <rect x="500" y="130" width="390" height="480" class="plugin"/>
+  <text x="525" y="165" class="group-title">Token Management and Validation</text>
+  <rect x="555" y="195" width="280" height="56" class="node"/>
+  <text x="695" y="219" text-anchor="middle" class="text">Open Add/Edit</text>
+  <text x="695" y="238" text-anchor="middle" class="text">Token Dialog</text>
+  <rect x="555" y="280" width="280" height="74" class="node"/>
+  <text x="695" y="306" text-anchor="middle" class="text">Validate Before Save</text>
+  <text x="695" y="326" text-anchor="middle" class="small">required/unique name, type value</text>
+  <text x="695" y="344" text-anchor="middle" class="small">refs, theme refs, delete guard</text>
+  <polygon points="695,385 815,445 695,505 575,445" class="decision"/>
+  <text x="695" y="442" text-anchor="middle" class="text">Validation</text>
+  <text x="695" y="461" text-anchor="middle" class="text">Passed?</text>
+  <rect x="545" y="530" width="300" height="50" class="error"/>
+  <text x="695" y="552" text-anchor="middle" class="text">Inline Error</text>
+  <text x="695" y="571" text-anchor="middle" class="small">invalid token is not saved</text>
+
+  <rect x="940" y="130" width="370" height="480" class="preview"/>
+  <text x="965" y="165" class="group-title">Sync Preview and Conflicts</text>
+  <rect x="990" y="195" width="270" height="50" class="node"/>
+  <text x="1125" y="225" text-anchor="middle" class="text">Save Local Changes</text>
+  <rect x="990" y="275" width="270" height="74" class="node"/>
+  <text x="1125" y="300" text-anchor="middle" class="text">Build Sync Diff</text>
+  <text x="1125" y="320" text-anchor="middle" class="small">added, modified, deleted</text>
+  <text x="1125" y="338" text-anchor="middle" class="small">set, old value, new value</text>
+  <polygon points="1125,385 1245,445 1125,505 1005,445" class="decision"/>
+  <text x="1125" y="442" text-anchor="middle" class="text">Conflict</text>
+  <text x="1125" y="461" text-anchor="middle" class="text">Detected?</text>
+  <rect x="970" y="530" width="310" height="50" class="error"/>
+  <text x="1125" y="560" text-anchor="middle" class="text">Block Sync Until Resolved</text>
+
+  <rect x="1360" y="130" width="390" height="480" class="sync"/>
+  <text x="1385" y="165" class="group-title">Provider Sync</text>
+  <rect x="1415" y="195" width="280" height="50" class="terminal"/>
+  <text x="1555" y="217" text-anchor="middle" class="text">Enable Sync Button</text>
+  <text x="1555" y="236" text-anchor="middle" class="small">no token/theme errors or conflicts</text>
+  <rect x="1415" y="275" width="280" height="50" class="node"/>
+  <text x="1555" y="305" text-anchor="middle" class="text">User Clicks Sync</text>
+  <rect x="1400" y="355" width="310" height="86" class="node"/>
+  <text x="1555" y="381" text-anchor="middle" class="text">Run Sync Preflight</text>
+  <text x="1555" y="402" text-anchor="middle" class="small">token/theme validation, connection,</text>
+  <text x="1555" y="420" text-anchor="middle" class="small">changes exist, target conflicts</text>
+  <polygon points="1555,470 1675,530 1555,590 1435,530" class="decision"/>
+  <text x="1555" y="527" text-anchor="middle" class="text">Preflight</text>
+  <text x="1555" y="546" text-anchor="middle" class="text">Passed?</text>
+
+  <rect x="50" y="675" width="530" height="470" class="provider"/>
+  <text x="75" y="710" class="group-title">Merge Request Handling</text>
+  <rect x="105" y="745" width="300" height="50" class="node"/>
+  <text x="255" y="775" text-anchor="middle" class="text">Check Pending Merge Request</text>
+  <polygon points="255,825 380,885 255,945 130,885" class="decision"/>
+  <text x="255" y="882" text-anchor="middle" class="text">Open MR</text>
+  <text x="255" y="901" text-anchor="middle" class="text">Exists?</text>
+  <rect x="85" y="985" width="210" height="50" class="node"/>
+  <text x="190" y="1015" text-anchor="middle" class="text">Create Branch</text>
+  <rect x="325" y="985" width="210" height="50" class="node"/>
+  <text x="430" y="1015" text-anchor="middle" class="text">Rebase Branch</text>
+  <rect x="85" y="1070" width="210" height="50" class="node"/>
+  <text x="190" y="1100" text-anchor="middle" class="text">Commit Changes</text>
+  <rect x="325" y="1070" width="210" height="50" class="node"/>
+  <text x="430" y="1100" text-anchor="middle" class="text">Update MR</text>
+
+  <rect x="640" y="675" width="330" height="470" class="provider"/>
+  <text x="665" y="710" class="group-title">Git Provider and Repository</text>
+  <rect x="695" y="745" width="220" height="50" class="node"/>
+  <text x="805" y="775" text-anchor="middle" class="text">Provider API</text>
+  <rect x="695" y="830" width="220" height="50" class="node"/>
+  <text x="805" y="860" text-anchor="middle" class="text">Review and Merge MR</text>
+  <rect x="690" y="930" width="230" height="145" class="artifact"/>
+  <text x="805" y="962" text-anchor="middle" class="text">Repository</text>
+  <text x="805" y="993" text-anchor="middle" class="small">tokens.json</text>
+  <text x="805" y="1018" text-anchor="middle" class="small">style-dictionary.config.js</text>
+  <text x="805" y="1043" text-anchor="middle" class="small">build/variables.css</text>
+
+  <rect x="1030" y="675" width="345" height="470" class="pipeline"/>
+  <text x="1055" y="710" class="group-title">CI/CD and Style Dictionary</text>
+  <rect x="1075" y="745" width="255" height="58" class="node"/>
+  <text x="1202" y="770" text-anchor="middle" class="text">Pipeline Triggered</text>
+  <text x="1202" y="789" text-anchor="middle" class="small">tokens.json or config changed</text>
+  <rect x="1075" y="835" width="255" height="50" class="node"/>
+  <text x="1202" y="865" text-anchor="middle" class="text">Run Style Dictionary Build</text>
+  <polygon points="1202,915 1315,975 1202,1035 1089,975" class="decision"/>
+  <text x="1202" y="972" text-anchor="middle" class="text">Build</text>
+  <text x="1202" y="991" text-anchor="middle" class="text">Passed?</text>
+  <rect x="1065" y="1070" width="275" height="50" class="artifact"/>
+  <text x="1202" y="1100" text-anchor="middle" class="text">Generate variables.css</text>
+
+  <rect x="1435" y="675" width="315" height="470" class="pipeline"/>
+  <text x="1460" y="710" class="group-title">Developer Usage</text>
+  <rect x="1485" y="770" width="215" height="50" class="artifact"/>
+  <text x="1592" y="800" text-anchor="middle" class="text">Publish Artifacts</text>
+  <rect x="1485" y="870" width="215" height="50" class="node"/>
+  <text x="1592" y="900" text-anchor="middle" class="text">Import variables.css</text>
+  <rect x="1485" y="970" width="215" height="68" class="terminal"/>
+  <text x="1592" y="997" text-anchor="middle" class="text">Use CSS Variables</text>
+  <text x="1592" y="1017" text-anchor="middle" class="small">in development apps</text>
+
+  <path d="M250 245 L250 275" class="line"/>
+  <path d="M250 325 L250 355" class="line"/>
+  <path d="M365 415 C420 415 455 223 555 223" class="line"/>
+  <text x="410" y="398" class="label">No</text>
+  <path d="M250 475 L250 520" class="line"/>
+  <text x="270" y="500" class="label">Yes</text>
+  <path d="M390 548 C450 548 490 223 555 223" class="line"/>
+  <path d="M835 223 C900 223 930 220 990 220" class="line"/>
+  <path d="M695 251 L695 280" class="line"/>
+  <path d="M695 354 L695 385" class="line"/>
+  <path d="M575 445 C520 445 510 555 545 555" class="thin"/>
+  <text x="535" y="430" class="label">No</text>
+  <path d="M815 445 C890 445 925 220 990 220" class="line"/>
+  <text x="850" y="430" class="label">Yes</text>
+  <path d="M1125 245 L1125 275" class="line"/>
+  <path d="M1125 349 L1125 385" class="line"/>
+  <path d="M1005 445 C940 445 925 555 970 555" class="thin"/>
+  <text x="970" y="430" class="label">Yes</text>
+  <path d="M1245 445 C1320 445 1345 220 1415 220" class="line"/>
+  <text x="1285" y="430" class="label">No</text>
+  <path d="M1555 245 L1555 275" class="line"/>
+  <path d="M1555 325 L1555 355" class="line"/>
+  <path d="M1555 441 L1555 470" class="line"/>
+  <path d="M1435 530 C1380 530 1360 620 255 745" class="line"/>
+  <text x="1390" y="515" class="label">Yes</text>
+  <path d="M1675 530 C1725 530 1730 595 1688 635 L1290 635 C1220 635 1160 590 1125 580" class="thin"/>
+  <text x="1695" y="515" class="label">No</text>
+  <path d="M255 795 L255 825" class="line"/>
+  <path d="M130 885 C75 885 70 1010 85 1010" class="line"/>
+  <text x="105" y="870" class="label">No</text>
+  <path d="M380 885 C445 885 450 955 430 985" class="line"/>
+  <text x="405" y="870" class="label">Yes</text>
+  <path d="M190 1035 L190 1070" class="line"/>
+  <path d="M430 1035 L430 1070" class="line"/>
+  <path d="M535 1095 C610 1095 650 770 695 770" class="line"/>
+  <path d="M295 1095 C500 1095 650 770 695 770" class="line"/>
+  <path d="M805 795 L805 830" class="line"/>
+  <path d="M805 880 L805 930" class="line"/>
+  <path d="M920 1002 C1000 1002 1015 774 1075 774" class="line"/>
+  <path d="M1202 803 L1202 835" class="line"/>
+  <path d="M1202 885 L1202 915" class="line"/>
+  <path d="M1202 1035 L1202 1070" class="line"/>
+  <text x="1220" y="1055" class="label">Yes</text>
+  <path d="M1089 975 C1035 975 1020 1165 1080 1165 L1260 1165" class="thin"/>
+  <text x="1045" y="958" class="label">No: fail pipeline</text>
+  <path d="M1340 1095 C1400 1095 1425 795 1485 795" class="line"/>
+  <path d="M1592 820 L1592 870" class="line"/>
+  <path d="M1592 920 L1592 970" class="line"/>
+</svg>
