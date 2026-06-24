@@ -3,8 +3,8 @@
  */
 
 :root {
-  --color-brand-primary: #0066ff; /** Primary brand color 1 */
-  --color-brand-secondary: #ff6600; /** Secondary brand color 1 */
+  --color-brand-primary: #0066ff; /** Primary brand color */
+  --color-brand-secondary: #ff6600; /** Secondary brand color */
   --color-neutral-0: #ffffff;
   --color-neutral-900: #111827;
   --color-surface-default: #ffffff;
