@@ -1,0 +1,65 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-500: #64748b;
+  --color-neutral-700: #334155;
+  --color-neutral-900: #111827;
+  --color-neutral-950: #020617;
+  --color-brand-primary: #0f766e; /** Brand A primary color override */
+  --color-brand-secondary: #f59e0b; /** Brand A secondary color override */
+  --color-brand-accent: #14b8a6; /** Brand A accent color override */
+  --color-background-canvas: #020617;
+  --color-background-surface: #111827;
+  --color-background-subtle: #334155;
+  --color-foreground-default: #f9fafb;
+  --color-foreground-muted: #cbd5e1;
+  --color-foreground-inverse: #020617;
+  --color-border-default: #334155;
+  --color-border-strong: #64748b;
+  --color-action-primary: #14b8a6;
+  --color-action-primary-hover: #0f766e;
+  --color-action-secondary: #f59e0b;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --border-default-color: #334155; /** Default dark mode border */
+  --border-default-width: 1px; /** Default dark mode border */
+  --border-default-style: solid; /** Default dark mode border */
+  --border-strong-color: #64748b; /** Strong dark mode border */
+  --border-strong-width: 1px; /** Strong dark mode border */
+  --border-strong-style: solid; /** Strong dark mode border */
+  --component-button-primary-color: [object Object];
+  --component-button-primary-color2: [object Object];
+  --component-button-primary-spacing: [object Object];
+  --component-button-primary-spacing2: [object Object];
+  --component-button-primary-border-radius: [object Object];
+  --component-button-primary-border: [object Object];
+  --component-button-secondary-color: [object Object];
+  --component-button-secondary-color2: [object Object];
+  --component-button-secondary-spacing: [object Object];
+  --component-button-secondary-spacing2: [object Object];
+  --component-button-secondary-border-radius: [object Object];
+  --component-button-secondary-border: [object Object];
+  --component-card-default-color: [object Object];
+  --component-card-default-color2: [object Object];
+  --component-card-default-spacing: [object Object];
+  --component-card-default-border-radius: [object Object];
+  --component-card-default-border: [object Object];
+  --component-page-default-color: [object Object];
+  --component-page-default-color2: [object Object];
+  --component-page-default-spacing: [object Object];
+}
